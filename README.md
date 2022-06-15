@@ -161,6 +161,15 @@ pub fun main(): String {
 ```
 ![imagen](https://user-images.githubusercontent.com/107128136/173958516-b23d1c85-a0ba-446c-ae42-50706a371c3c.png)
 
+The alterntive would be to allow the optionals and in case of a missing key, it will return an empty value:
+```cadence
+pub fun main(): String? {
+
+  let thing: {Address: String} = {0x01: "One", 0x02: "Two", 0x03: "Three", 0x04: "Caramba"}
+  return thing[0x05]
+}
+```
+![imagen](https://user-images.githubusercontent.com/107128136/173958806-85b7a7f4-3c66-4949-a535-128cc9211891.png)
 
 ## Q4 
 - the error message means that a type String was expected as the result of the function return, but instead got an optional
@@ -170,7 +179,7 @@ pub fun main(): String {
 ![imagen](https://user-images.githubusercontent.com/107128136/173957725-3b7f3ddf-2547-40cd-a901-00d96490c828.png)
 
 
-
+# Chapter 2 Day 4
 
 
 
