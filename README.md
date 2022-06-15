@@ -33,7 +33,6 @@ Script
 import JakobTucker from 0x03
 
 pub fun main(): String{
-  return "The value of the variable JakobTucker.is equals"
   return JakobTucker.is
 }
 ```
