@@ -22,4 +22,11 @@ Q2 - They are a very good approach to making smart contracts development better 
 
 # Chapter 2 Day 1
 
+Contract
+
+![imagen](https://user-images.githubusercontent.com/107128136/173880586-bc5025cc-47b9-4dac-a32c-1418312ed16a.png)
+
+
+Script
+
 ![imagen](https://user-images.githubusercontent.com/107128136/173701460-bc3919cb-e163-4fd0-af04-99730d6555c7.png)
