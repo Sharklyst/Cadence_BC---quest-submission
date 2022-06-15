@@ -9,8 +9,8 @@ I understand a blockchain as a database made a series of blocks which contain in
 Smart contracts are automated programs stored in a blockchain that run if certain conditions are met. An example of that would be a decentralized exchange that when sending one token to a liquidity pool, it will swap it for another token and send it back.
 
 ## Q3
-A transaction is some data which is processed by the blockchain and changes some of the information stored on it - like the balance of a wallet after paying for something. 
-A script is a program written to read the information available on the blockchain - like reading the balance of a certain wallet on a certain date.
+A transaction is some data which is processed by the blockchain and changes some of the information stored on it - like the balance of a wallet after paying for something. It costs gas tp execute.
+A script is a program written to read the information available on the blockchain - like reading the balance of a certain wallet on a certain date. it is free to execute.
 
 # Chapter 1 Day 2
 
@@ -109,5 +109,67 @@ transaction (myNewNumber: Int){
 }
 ```
 ![imagen](https://user-images.githubusercontent.com/107128136/173941710-14155659-6e54-4801-9a52-b3f6aacdce82.png)
+
+# Chapter 2 Day 3
+
+## Q1
+
+```cadence
+pub fun main() {
+
+    let favorite: [String] = ["Bob my neighbour", "Greg my baker", "Momma"]
+
+    log(favorite)
+}
+```
+![imagen](https://user-images.githubusercontent.com/107128136/173955469-303fdd55-2a34-4c58-b573-e3c059e55dc3.png)
+
+## Q2
+
+```cadence
+pub fun main() {
+    var socialMedia:{String: UInt64} = {"Facebook": 0, "Instagram": 0, "Twitter": 1, "Reddit": 0, "LinkedIn": 0}
+    
+    log (socialMedia)
+}
+```
+
+![imagen](https://user-images.githubusercontent.com/107128136/173956058-7d50260b-71e9-43fc-aa7f-c18b23c5f6c7.png)
+
+
+## Q3
+
+The force unwrap operator is used as a way of returning an error if the type of a variable is nil. 
+
+The following script will return "Caramba" as the value tied to the key 0x04:
+```cadence
+pub fun main(): String {
+
+  let thing: {Address: String} = {0x01: "One", 0x02: "Two", 0x03: "Three", 0x04: "Caramba"}
+  return thing[0x04]!
+}```
+
+On the contrary, the script below will compile but return an error because the function returns a nil (it couldn't find the key 0x05:
+```
+cadence
+pub fun main(): String {
+
+  let thing: {Address: String} = {0x01: "One", 0x02: "Two", 0x03: "Three", 0x04: "Caramba"}
+  return thing[0x05]
+}
+```
+![imagen](https://user-images.githubusercontent.com/107128136/173958516-b23d1c85-a0ba-446c-ae42-50706a371c3c.png)
+
+
+## Q4 
+- the error message means that a type String was expected as the result of the function return, but instead got an optional
+- I guess with dictionaries the syntax makes the use of optionals standard and if not handled correctly, it prevents the script to run
+- the error can be solved either by forcing the unwrapping on return `return thing[0x03]!` or by declaring the main as an optional `pub fun main(): String?` 
+
+![imagen](https://user-images.githubusercontent.com/107128136/173957725-3b7f3ddf-2547-40cd-a901-00d96490c828.png)
+
+
+
+
 
 
