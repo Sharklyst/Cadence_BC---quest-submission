@@ -147,7 +147,8 @@ pub fun main(): String {
 
   let thing: {Address: String} = {0x01: "One", 0x02: "Two", 0x03: "Three", 0x04: "Caramba"}
   return thing[0x04]!
-}```
+}
+```
 
 On the contrary, the script below will compile but return an error because the function returns a nil (it couldn't find the key 0x05:
 ```
