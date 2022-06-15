@@ -92,7 +92,22 @@ pub fun main(): Int{
   return JakobTucker.myNumber
 }
 ```
-`C2D2Q4 Script 
-Result
+![imagen](https://user-images.githubusercontent.com/107128136/173939896-9dfcb9ac-b384-4e99-bfea-2576ac2277f7.png)
 
-{"type":"Int","value":"0"}`
+### Transaction
+
+```cadence
+import JakobTucker from 0x03
+
+transaction (myNewNumber: Int){
+
+  prepare(signer: AuthAccount) {}
+
+  execute {
+    JakobTucker.updateMyNumber(newNumber: myNewNumber)
+  }
+}
+```
+![imagen](https://user-images.githubusercontent.com/107128136/173941710-14155659-6e54-4801-9a52-b3f6aacdce82.png)
+
+
