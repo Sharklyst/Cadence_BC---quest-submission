@@ -29,4 +29,13 @@ Contract
 
 Script
 
+```cadence 
+import JakobTucker from 0x03
+
+pub fun main(): String{
+  return "The value of the variable JakobTucker.is equals"
+  return JakobTucker.is
+}
+```
+
 ![imagen](https://user-images.githubusercontent.com/107128136/173701460-bc3919cb-e163-4fd0-af04-99730d6555c7.png)
