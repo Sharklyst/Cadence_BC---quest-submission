@@ -38,3 +38,40 @@ pub fun main(): String{
 ```
 
 ![imagen](https://user-images.githubusercontent.com/107128136/173701460-bc3919cb-e163-4fd0-af04-99730d6555c7.png)
+
+# Chapter 2 Day 2
+
+Q1 Since a script only read data from the blockchain, calling the `changeGreeting` function which aims to modify the data would probably give back an error
+
+Q2 It allows the transaction to access data in your account by signing in the transaction.
+
+Q3 The `prepare` phase aims at accessing the account data while the `execute` phase calls functions to modify the data on the blockchain. This separates the logic in two different phases but the execution coudl theoretically also work under the `prepare` phase. So takeaway is:
+ - `prepare` allows you to access data in a account
+ - `execute` is a different logical phase where data is modify by calling functions
+
+Q4
+
+Contract 
+
+```cadence
+pub contract JakobTucker {
+  
+  pub var is: String
+
+  pub var myNumber: Int
+
+  pub fun changeis(nowis: String) {
+    self.is = nowis
+  }
+
+  pub fun updateMyNumber(newNumber: Int){
+    self.myNumber = newNumber
+  }
+
+  init(){ 
+    self.is = "the best" 
+    self.myNumber = 0
+  }
+  
+}
+```
