@@ -181,5 +181,67 @@ pub fun main(): String? {
 
 # Chapter 2 Day 4
 
+## Contract
+
+```cadence
+//Struct Contrac
+
+pub contract library {
+
+    pub var booklocation: {String: Bookfile}
+
+    pub struct Bookfile {
+        pub let title: String
+        pub let author: String
+        pub let year: Int
+        pub let location: String
+
+        // Pass 4 arguments when creating the Struct
+
+        init (_title: String, _author: String, _year: Int, _location: String){
+            self.title = _title
+            self.author = _author
+            self.year = _year
+            self.location = _location
+        }
+    } 
+
+    pub fun addBook (title: String, author: String, year: Int, location: String){
+        let newBook = Bookfile(_title: title, _author: author, _year: year, _location: location)
+        self.booklocation[location] = newBook
+    }
+
+    init() {
+        self.booklocation = {}
+    }
+}
+```
+
+## Transaction
+
+```cadence
+import library from 0x01
+
+transaction (title: String, author: String, year: Int, location: String) {
+    prepare (signer: AuthAccount){}
+
+    execute {
+        library.addBook(title: title, author: author, year: year, location: location)
+        log("Everything is fine")
+    }
+}
+```
+![imagen](https://user-images.githubusercontent.com/107128136/174136753-df112d08-132e-47e0-bd69-424ebc0d4259.png)
 
 
+## Script
+
+```cadence
+import library from 0x01
+
+pub fun main(location: String):library.Bookfile {
+  return library.booklocation[location]!
+}
+```
+
+![imagen](https://user-images.githubusercontent.com/107128136/174136853-9c6bb293-05e3-447a-a480-fd8b39e61823.png)
